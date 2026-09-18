@@ -1,0 +1,279 @@
+/* Configurações Globais / Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --vermelho-aranha: #e21b22;
+    --azul-aranha: #004a93;
+    --fundo-escuro: #121214;
+    --fundo-card: #1a1a1e;
+    --texto-claro: #ffffff;
+    --texto-cinza: #a0a0a5;
+}
+
+body {
+    background-color: var(--fundo-escuro);
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+/* Menu de Navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(18, 18, 20, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--vermelho-aranha);
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--vermelho-aranha);
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--vermelho-aranha);
+}
+
+/* Seção Hero (Banner Principal) */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), var(--fundo-escuro)), url('https://unsplash.com') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 60px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--texto-claro);
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    color: var(--vermelho-aranha);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--texto-cinza);
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: var(--vermelho-aranha);
+    color: var(--texto-claro);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #b81116;
+    transform: scale(1.05);
+}
+
+/* Estrutura das Seções */
+.container {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-darker {
+    background-color: #09090b;
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--vermelho-aranha);
+    margin: 10px auto 0;
+}
+
+/* Grid da Sinopse */
+.sinopse-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.poster-placeholder {
+    background-color: var(--fundo-card);
+    height: 450px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #333;
+    color: var(--texto-cinza);
+}
+
+.sinopse-text p {
+    margin-bottom: 20px;
+    color: var(--texto-cinza);
+}
+
+.movie-info {
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.movie-info p {
+    margin-bottom: 8px;
+    color: var(--texto-claro);
+}
+
+/* Grid do Elenco */
+.elenco-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.card {
+    background-color: var(--fundo-card);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--vermelho-aranha);
+}
+
+.avatar-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.card h4 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    color: var(--texto-cinza);
+    font-size: 0.9rem;
+}
+
+/* Seção de Vídeo Responsivo */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Rodapé */
+footer {
+    background-color: #050507;
+    text-align: center;
+    padding: 40px 5%;
+    color: var(--texto-cinza);
+    font-size: 0.9rem;
+    border-top: 1px solid #222;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Responsividade Básica (Celulares) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar nav ul li {
+        margin: 0 10px;
+    }
+    .hero {
+        height: 60vh;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .sinopse-grid {
+        grid-template-columns: 1fr;
+    }
+    .poster-placeholder {
+        height: 300px;
+    }
+}
